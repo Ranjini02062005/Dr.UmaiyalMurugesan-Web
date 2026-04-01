@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon – Nari Sakthi Umaiyal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --p1:         #fbb68d;   /* lightest peach  */
+      --p2:         #faad77;   /* soft orange     */
+      --p3:         #f8955e;   /* mid orange      */
+      --p4:         #f28039;   /* warm orange     */
+      --p5:         #e95525;   /* deep orange     */
+
+      --bg:         #FEF6EE;
+      --bg-dark:    #FDE8D4;
+      --primary:    #e95525;
+      --primary-dk: #c94218;
+      --text-dark:  #2C1A0E;
+      --text-mid:   #6B3D24;
+      --text-light: #A06040;
+      --white:      #FFFFFF;
+      --card-bg:    #FFF8F2;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    header {
+      text-align: center;
+      padding: 40px 20px 10px;
+    }
+
+    /* LOGO SVG – lotus + heartbeat */
+    .logo-svg {
+      width: 90px;
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .brand-tagline {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      letter-spacing: 0.12em;
+      margin-top: 4px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      text-align: center;
+      padding: 52px 20px 40px;
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.75rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .hero-launching {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      font-style: italic;
+    }
+
+    .hero-desc {
+      font-size: 0.97rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* ── CARDS ── */
+    .cards-wrap {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 40px 24px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid rgba(233,85,37,0.12);
+      padding: 48px 36px 44px;
+      flex: 1 1 260px;
+      max-width: 360px;
+      text-align: center;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      box-shadow: 0 2px 12px rgba(233,85,37,0.06);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(233,85,37,0.15);
+    }
+
+    .card-icon {
+      width: 72px;
+      height: 72px;
+      display: block;
+      margin: 0 auto 22px;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.18rem;
+      color: var(--primary-dk);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.55;
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      text-align: center;
+      padding: 36px 24px 28px;
+    }
+
+    .quote-section blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-style: italic;
+      color: var(--primary);
+      max-width: 640px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* ── COMING SOON BANNER ── */
+    .coming-soon-banner {
+      background: linear-gradient(135deg, var(--primary-dk) 0%, var(--primary) 60%, var(--p4) 100%);
+      margin: 20px 24px 0;
+      border-radius: 14px;
+      padding: 44px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .coming-soon-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .banner-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .banner-label::after {
+      content: '';
+      display: inline-block;
+      width: 2px;
+      height: 18px;
+      background: var(--p1);
+      border-radius: 1px;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    .coming-soon-btn {
+      display: inline-block;
+      background: var(--p1);
+      color: var(--primary-dk);
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 14px 52px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      box-shadow: 0 4px 18px rgba(251,182,141,0.35);
+      text-decoration: none;
+      transition: background 0.22s, transform 0.18s, box-shadow 0.22s;
+    }
+
+    .coming-soon-btn:hover {
+      background: #fff;
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(251,182,141,0.50);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 22px 20px 28px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: auto;
+    }
+
+
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+    .fade-in.d1 { animation-delay: 0.1s; }
+    .fade-in.d2 { animation-delay: 0.25s; }
+    .fade-in.d3 { animation-delay: 0.4s; }
+    .fade-in.d4 { animation-delay: 0.55s; }
+    .fade-in.d5 { animation-delay: 0.7s; }
+    .fade-in.d6 { animation-delay: 0.85s; }
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 680px) {
+      .cards-wrap { flex-direction: column; align-items: center; }
+      .card { max-width: 100%; }
+      .coming-soon-banner { margin: 20px 12px 0; border-radius: 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER / LOGO -->
+  <header class="fade-in d1">
+    <!-- Lotus + heartbeat SVG logo -->
+    <svg class="logo-svg" viewBox="0 0 100 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Lotus petals – orange tones -->
+      <ellipse cx="50" cy="52" rx="9" ry="22" fill="#f28039" opacity="0.85" transform="rotate(-30 50 52)"/>
+      <ellipse cx="50" cy="52" rx="9" ry="22" fill="#f28039" opacity="0.85" transform="rotate(30 50 52)"/>
+      <ellipse cx="50" cy="52" rx="9" ry="24" fill="#e95525" opacity="0.9"  transform="rotate(0 50 52)"/>
+      <ellipse cx="50" cy="52" rx="8" ry="20" fill="#faad77" opacity="0.75" transform="rotate(-55 50 52)"/>
+      <ellipse cx="50" cy="52" rx="8" ry="20" fill="#faad77" opacity="0.75" transform="rotate(55 50 52)"/>
+      <!-- Heartbeat line -->
+      <polyline points="28,54 35,54 39,44 43,62 47,50 51,50 55,46 59,58 63,54 72,54"
+        stroke="#fbb68d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+
+    <div class="brand-name">Dr. Umaiyal Murugesan</div>
+    <div class="brand-tagline">Service &bull; Care &bull; Commitment</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero fade-in d2">
+    <h1>A Voice for Women. A Vision for Society.</h1>
+    <p class="hero-launching">Official website launching soon</p>
+    <p class="hero-desc">Nari Sakthi Umaiyal represents strength, dignity, and value-driven leadership. This platform will soon share initiatives focused on women empowerment and community well-being.</p>
+  </section>
+
+  <!-- CARDS -->
+  <div class="cards-wrap">
+    <!-- Women Empowerment -->
+    <div class="card fade-in d3">
+      <svg class="card-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="28" r="16" stroke="#e95525" stroke-width="2.8" fill="none"/>
+        <line x1="36" y1="44" x2="36" y2="58" stroke="#e95525" stroke-width="2.8" stroke-linecap="round"/>
+        <line x1="27" y1="52" x2="45" y2="52" stroke="#e95525" stroke-width="2.8" stroke-linecap="round"/>
+        <!-- Fist inside circle -->
+        <path d="M30 24 Q30 18 36 18 Q42 18 42 24 L42 30 Q42 34 36 34 Q30 34 30 30 Z" fill="#e95525" opacity="0.15"/>
+        <path d="M31 26 L31 22 Q31 20 33 20 L33 26" stroke="#e95525" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <path d="M33 25 L33 20 Q33 18 35 18 L35 25" stroke="#e95525" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <path d="M35 25 L35 18 Q35 16 37 16 L37 25" stroke="#e95525" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <path d="M37 25 L37 19 Q37 17 39 17 L39 25" stroke="#e95525" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <path d="M29 25 Q27 25 27 28 L29 30 L41 30 L41 25" stroke="#e95525" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+        <!-- Female symbol cross bar -->
+        <line x1="32" y1="62" x2="40" y2="62" stroke="#e95525" stroke-width="2.8" stroke-linecap="round"/>
+      </svg>
+      <h3>Women Empowerment</h3>
+      <p>Education, awareness, confidence.</p>
+    </div>
+
+    <!-- Social Responsibility -->
+    <div class="card fade-in d4">
+      <svg class="card-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hand holding heart -->
+        <path d="M18 44 Q16 40 20 38 L30 34 Q33 33 35 35 L40 35 Q44 35 44 39 Q44 41 41 41 L36 41"
+          stroke="#e95525" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M18 44 L16 50 Q15 54 19 55 L44 55 Q50 55 52 49 L56 38 Q57 34 53 33 Q49 32 47 36 L44 41"
+          stroke="#e95525" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <!-- Heart shape -->
+        <path d="M30 26 Q30 20 36 20 Q42 20 42 26 Q42 30 36 36 Q30 30 30 26 Z"
+          fill="#e95525" opacity="0.18" stroke="#e95525" stroke-width="2"/>
+        <path d="M33 24 Q33 22 36 22 Q39 22 39 24" stroke="#e95525" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      <h3>Social Responsibility</h3>
+      <p>Health, family values.</p>
+    </div>
+
+    <!-- Leadership with Integrity -->
+    <div class="card fade-in d5">
+      <svg class="card-icon" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Person silhouette -->
+        <circle cx="36" cy="20" r="10" stroke="#e95525" stroke-width="2.5" fill="none"/>
+        <path d="M20 50 Q20 38 36 38 Q52 38 52 50 L52 56 L20 56 Z"
+          stroke="#e95525" stroke-width="2.5" fill="none"/>
+        <!-- Star badge -->
+        <polygon points="36,42 37.5,46 42,46 38.5,48.5 40,53 36,50 32,53 33.5,48.5 30,46 34.5,46"
+          fill="#e95525" opacity="0.25" stroke="#e95525" stroke-width="1.2"/>
+        <!-- Collar lines -->
+        <path d="M30 38 L36 44 L42 38" stroke="#e95525" stroke-width="2" stroke-linecap="round" fill="none"/>
+      </svg>
+      <h3>Leadership with Integrity</h3>
+      <p>Ethical, inclusive, service-oriented.</p>
+    </div>
+  </div>
+
+  <!-- QUOTE -->
+  <section class="quote-section fade-in d5">
+    <blockquote>"True strength lies in uplifting others." – Umaiyal</blockquote>
+  </section>
+
+  <!-- COMING SOON BANNER -->
+  <div class="coming-soon-banner fade-in d6">
+    <div class="banner-label">This Website is Under Construction</div>
+    <a href="index.html" class="coming-soon-btn">Coming Soon</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="fade-in d6">
+    &copy; 2026 Nari Sakthi Umaiyal. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
